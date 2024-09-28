@@ -49,11 +49,14 @@ public class BootjpaexampleApplication {
 		
 		
 		//Get Data
-		Iterable<User> iUsers = userRepository.findAll();
+//		Iterable<User> iUsers = userRepository.findAll();
+//		
+//		iUsers.forEach(user -> System.out.println(user));
 		
-		iUsers.forEach(user -> System.out.println(user));
 		
-		
+		//Deleting
+		userRepository.deleteById(3);
+		System.out.println("Deleted");
 		
 		
 		
