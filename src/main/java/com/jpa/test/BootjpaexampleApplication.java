@@ -55,11 +55,18 @@ public class BootjpaexampleApplication {
 		
 		
 		//Deleting
-		userRepository.deleteById(3);
-		System.out.println("Deleted");
+//		userRepository.deleteById(3);
+//		System.out.println("Deleted");
 		
 		
+		List<User> usersByName = userRepository.findByName("Harshita");
+		usersByName.forEach(user -> System.out.println(user));
 		
+		List<User> usersByNameAndCity = userRepository.findByNameAndCity("Harshita","Bangalore");
+		usersByNameAndCity.forEach(user -> System.out.println(user));
+		
+		List<User> usersByStatusContaining = userRepository.findByStatusContaining("Developer");
+		usersByStatusContaining.forEach(user -> System.out.println(user));
 	}
 
 }
